@@ -1,0 +1,54 @@
+#include <LiquidCrystal.h>
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+void setup(){
+    // set up the LCD's number of columns and rows: 
+  lcd.begin(20, 4);
+  // initialize the serial communications:
+  Serial.begin(9600);
+  Serial.println("initialized");
+   
+}
+int line_1 = 1;
+int line_2 = 2;
+int line_3 = 3;
+int line_4 = 4;
+int arr[] = {line_1,line_2,line_3,line_4};
+int i = 0;
+   int x = 0;  
+void loop(){
+
+   while (Serial.available() > 0) {
+      // display each character to the LCD
+//      String inp =  Serial.read();
+      char k = Serial.read();
+      if( k == '\n' || k == '\r'){
+        Serial.println("newline");
+        
+        x = 0;
+        if(i>=4){
+          lcd.clear();
+          i = 0;
+          
+        }
+        else{
+          lcd.setCursor(x,arr[i]);
+          i++;
+        }
+      }
+      else{
+        lcd.write(k);
+
+        Serial.print(" - (");
+      
+        Serial.print(x);
+        Serial.print(",");
+        Serial.print(i);
+        Serial.println(")");
+      
+        x++;
+    }
+   }
+}
