@@ -60,3 +60,8 @@ I will do my best to maintain this readme as the goals and requiements change.
 At the moment (2012-11-06) Code is in mess as we have a encoder changing the song
 and song information (song name, artist, elapsed time) are being displayed to the 
 20x4 lcd. I would not suggest a fork at the time. 
+
+
+Notes:
+	- http://incise.org/mpris-remote.html		<-- mpris-remote
+	- https://github.com/mackstann/mpris-remote 	<-- mpris-remote mainline git
