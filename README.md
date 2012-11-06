@@ -4,12 +4,15 @@ jMusic_Controller
 A device powered by an Arduino (possibly teensy3 later) to control Audacious.
 
 The project is broken up into 3 different parts:
+
     1. Arduino/Teensy3 Code. (for the most part should be compatable with eachother)
        - part of this will contain schematics for the physicial hardware. 
+
     2. mpris-remote , python code to interface with Audacious via dbus?
        - in the short amount of time I spent trying to import the code as a library
        	 I had some difficulities, currently serial communication with the arduino
 	 is being done here. 
+
     3. Raspberry pi related stuff.
        - build instructions, possibly a image for the rpi for easy deployment
        - It might be worth while(even just for fun) using the gpio pins on the rpi 
@@ -28,6 +31,7 @@ The project is broken up into 3 different parts:
 
 	 
 Future goals:
+
        - Integrate an amp inside the device.
              It would be neat to have this fairly self contained and be
 	     essentially a stereo. Having a preamp would atleast provide
