@@ -78,39 +78,6 @@ void loop(){
       }
 }
 
-void loop_1(){
-   while (Serial.available() > 0) {
-      // display each character to the LCD
-//      String inp =  Serial.read();
-      char k = Serial.read();
-      if( k == '\n' || k == '\r'){
-        Serial.println("newline");
-        
-        x = 0;
-        if(i>=4){
-          lcd.clear();
-          i = 0;
-          
-        }
-        else{
-          lcd.setCursor(x,arr[i]);
-          i++;
-        }
-      }
-      else{
-        lcd.write(k);
-
-        Serial.print(" - (");
-      
-        Serial.print(x);
-        Serial.print(",");
-        Serial.print(i);
-        Serial.println(")");
-      
-        x++;
-    }
-   }
-}
 
 
 

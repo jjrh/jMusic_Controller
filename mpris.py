@@ -84,6 +84,8 @@ NOTES:
 
 import os, sys, re, time, urllib2, dbus
 
+print "Module loaded"
+
 org_mpris_re = re.compile('^org\.mpris\.([^.]+)$')
 
 class BadUserInput(Exception):
@@ -600,7 +602,7 @@ def write(list_in):
 
     s.write(line1+line2+line3+line4)
 
-
+"""
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] in ('-h', '--help', '-?'):
         print usage
@@ -710,18 +712,20 @@ if __name__ == '__main__':
             print "some kind of error"
             write(["nothing playing?","","",""])
     
-    """
-    try:
-        
-        output_generator = getattr(remote, method_name)(*args) or []
-        for chunk in output_generator:
-            sys.stdout.write(chunk.encode(encoding, 'replace'))
 
-    except BadUserInput, e:
-        print >>sys.stderr, e
-        raise SystemExit(1)
-    except NoTrackCurrentlySelected:
-        print >>sys.stderr, "No track is currently selected."
-    except KeyboardInterrupt:
-        raise SystemExit(2)
-    """
+    # try:
+        
+    #     output_generator = getattr(remote, method_name)(*args) or []
+    #     for chunk in output_generator:
+    #         sys.stdout.write(chunk.encode(encoding, 'replace'))
+
+    # except BadUserInput, e:
+    #     print >>sys.stderr, e
+    #     raise SystemExit(1)
+    # except NoTrackCurrentlySelected:
+    #     print >>sys.stderr, "No track is currently selected."
+    # except KeyboardInterrupt:
+    #     raise SystemExit(2)
+
+
+"""
