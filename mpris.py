@@ -568,16 +568,28 @@ class MPRISRemote(object):
 
 
 
-import serial
-try:
-    s = serial.Serial('/dev/ttyUSB0', 9600)
-except:
-    s = serial.Serial('/dev/ttyUSB1', 9600)
-empty = ""
-for i in range(24*4):
-    empty = empty+" "
-    
+# import serial
+# try:
+#     s = serial.Serial('/dev/ttyUSB0', 9600)
+# except:
+#     s = serial.Serial('/dev/ttyUSB1', 9600)
+# empty = ""
+# for i in range(24*4):
+#     empty = empty+" "
 
+
+
+class printClass:
+    def __init__(self):
+        pass
+    def write(self,inp):
+        print inp
+    
+    def flushInput(self,inp=None,inp2=None):
+        print inp
+        print inp2
+
+s = printClass()
 def chop(s):
     length = 0
     if length != None:
@@ -601,6 +613,7 @@ def write(list_in):
     line4 = chop(list_in[3])
 
     s.write(line1+line2+line3+line4)
+    print line1+line2+line3+line4
 
 """
 if __name__ == '__main__':
